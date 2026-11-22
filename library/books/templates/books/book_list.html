@@ -1,0 +1,33 @@
+{% extends "books/base.html" %}
+
+{% block content %}
+<h1>All Books</h1>
+<p><strong>Total: {{ books|length }}</strong></p>
+
+<ul>
+    {% for book in books %}
+    <li>
+        <!-- Left side (Title) -->
+        <div class="book-info">
+            <a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a> 
+            <span style="color: #666; font-size: 14px; margin-left: 10px;">
+                {% if book.read %} ✅ Read {% else %} ❌ Not Read {% endif %}
+            </span>
+        </div>
+        
+        <!-- Middle (Author) -->
+        <div class="book-author">
+            by {{ book.author }}
+        </div>
+
+        <!-- Right side (Buttons) -->
+        <div class="action-links">
+            <a href="{% url 'book_edit' book.pk %}" class="edit-link">Edit</a>
+            <a href="{% url 'book_delete' book.pk %}">Delete</a>
+        </div>
+    </li>
+    {% empty %}
+    <li>No Books Available</li>
+    {% endfor %}
+</ul>
+{% endblock %}

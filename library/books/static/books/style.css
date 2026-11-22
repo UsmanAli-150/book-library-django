@@ -1,0 +1,208 @@
+/* 1. Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.container {
+    width: 99%; 
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* 2. Navbar */
+nav {
+    background-color: #2c3e50;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 20px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+/* 3. Typography */
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 24px; /* Smaller Title */
+}
+
+/* 4. Book List */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+li {
+    background: #ffffff;
+    margin-bottom: 12px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.book-info {
+    flex: 2; 
+    text-align: left;
+    font-size: 18px;
+}
+
+.book-info a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.book-info a:hover {
+    text-decoration: underline;
+}
+
+.book-author {
+    flex: 1; 
+    text-align: left;
+    color: #666;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.read-status {
+    flex: 1; 
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.action-links {
+    flex: 1;
+    text-align: right;
+}
+
+.action-links a {
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.action-links a.edit-link {
+    color: #f39c12;
+}
+
+.action-links a.delete-link {
+    color: #e74c3c;
+}
+
+.action-links a:hover {
+    text-decoration: underline;
+}
+
+/* 5. Forms (Large & Wide) */
+/* 5. Forms (Centered & Wide) */
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    
+    /* Keep it wide */
+    width: 90%;
+    max-width: 800px; 
+    
+    /* THIS is the magic that centers it perfectly */
+    margin: 20px auto; 
+}
+form p {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #444;
+    font-size: 16px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+form input[type="checkbox"] {
+    transform: scale(1.5); /* Bigger checkbox */
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* 6. Buttons */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    /* If you want the button to be full width of the form, keep this. 
+       If you want it small, change to 'width: auto;' */
+    width: 100%; 
+}
+
+button:hover {
+    background-color: #2980b9;
+}
