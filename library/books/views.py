@@ -5,19 +5,22 @@ from .forms import BookForm
 # Create your views here.
 def book_list(request):
     books = Book.objects.all().order_by("-added")
-    return render(request,"books/book_list.html",{"books":books})
+    read_count = books.filter(read=True).count() 
+    return render(request, "books/book_list.html", {"books": books, "page_title": "All Books", "read_count": read_count})
+
+def read_books(request):
+    books = Book.objects.filter(read=True)
+    read_count = books.count()
+    return render(request, "books/book_list.html", {"books": books, "page_title": "Read Books", "read_count": read_count})
+
+def books_by_author(request, name):
+    books = Book.objects.filter(author=name)
+    read_count = books.filter(read=True).count()
+    return render(request, "books/book_list.html", {"books": books, "page_title": f"Books by {name}", "read_count": read_count})
 
 def book_detail(request,pk):
     book = get_object_or_404(Book,pk=pk)
     return render(request,"books/book_detail.html",{"book":book})
-
-def read_books(request):
-    books = Book.objects.filter(read=True)
-    return render(request,"books/book_list.html",{"books":books})
-
-def books_by_author(request,name):
-    books = Book.objects.filter(author=name)
-    return render(request,"books/book_list.html",{"books":books})
 
 def create_book(request):
     if request.method == "POST":

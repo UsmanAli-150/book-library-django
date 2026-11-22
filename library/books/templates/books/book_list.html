@@ -1,8 +1,8 @@
 {% extends "books/base.html" %}
 
 {% block content %}
-<h1>All Books</h1>
-<p><strong>Total: {{ books|length }}</strong></p>
+<h1>{{ page_title }}</h1>
+<p><strong>Total: {{ books|length }}</strong> | <strong>Read: {{ read_count }}</strong></p>
 
 <ul>
     {% for book in books %}
